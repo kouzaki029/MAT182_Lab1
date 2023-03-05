@@ -1,0 +1,137 @@
+ClearAll
+
+
+
+h[x_] = Sin[x]
+
+
+
+k[x_] = 5 Log[3 x + 2]
+
+
+
+h[7]
+
+
+
+k[9]
+
+
+
+k[x - 2]
+
+
+
+k[-1]
+
+
+
+k[x/3 - 2/3]
+
+
+
+k[h[Pi]]
+
+
+
+h[k[Pi]]
+
+
+
+?N
+
+
+
+Plot[h[x],
+ 	{x, -5, 5},
+ 	PlotStyle -> {Orange, Thickness[.003]},
+ 	PlotLabel -> "h(x)= sin(x)\n",
+ 	Ticks -> {{{-Pi, "root"}, {0, "root"}, {Pi, "root"}}, Automatic},
+ 	TicksStyle -> Directive[Gray, Thin],
+ 	AxesLabel -> Automatic
+ ]
+ 
+ 
+ 
+ Plot[k[x],
+ 	{x, -5, 5},
+ 	PlotStyle -> {Blue, Thickness[.003]},
+ 	PlotLabel -> "k(x)= 5ln(3x+2)\n",
+ 	Ticks -> {{{-1/3, "root"}}, Automatic},
+ 	TicksStyle -> Directive[Gray, Thin],
+ 	AxesLabel -> Automatic
+ ]
+ 
+ 
+ 
+ Plot[{h[x], k[x]},
+ 	{x, -4, 4},
+ 	PlotRange -> {-7, 7},
+ 	PlotStyle -> {   {Orange, Thickness[.003]}, {Blue, 
+    Thickness[.003]}    },
+ 	Ticks -> {{{-Pi, "root"}, {-1/3, "root"}, {Pi, "root"}}, 
+   Automatic},
+ 	PlotLegends -> "Expressions",
+ 	AxesLabel -> Automatic
+ ]
+ 
+ 
+ 
+(*DEFINITE Integral:*)
+a = 1;
+b = 7;
+HoldForm[Integrate[h[x], {x, a, b}]] == Integrate[h[x], {x, a, b}] == 
+ Integrate[h[x], x, GeneratedParameters -> C]
+ 
+ 
+ 
+(*INDEFINITE Integral:*)
+HoldForm[Integrate[h[x], x]] == 
+ Integrate[h[x], x, GeneratedParameters -> C]
+ 
+ 
+ 
+(*Riemann Sum:*)
+a = 1;
+b = 7;
+
+
+
+n = 5;
+deltaX = (b - a)/n;
+HoldForm[Sum[   h[a + i*deltaX] * deltaX, {i, 0, (n - 1)}   ]] == 
+ N[Sum[   h[a + i*deltaX]*deltaX, {i, 0, (n - 1)}   ]]
+ 
+ 
+ 
+n = 10;
+deltaX = (b - a)/n;
+HoldForm[Sum[   h[a + i*deltaX] * deltaX, {i, 0, (n - 1)}   ]] == 
+ N[Sum[   h[a + i*deltaX]*deltaX, {i, 0, (n - 1)}   ]]
+ 
+ 
+ 
+n = 20;
+deltaX = (b - a)/n;
+HoldForm[Sum[   h[a + i*deltaX] * deltaX, {i, 0, (n - 1)}   ]] == 
+ N[Sum[   h[a + i*(deltaX)]*deltaX, {i, 0, (n - 1)}   ]]
+
+
+
+(*Demonstrating the Power of Riemann Sums, Definite Integrals, and \
+primarily the Fundamental Theorem Calculus*)
+
+a
+b
+(*Approximating the Area Under the Curve using Definite Integrals*) 
+HoldForm[Integrate[h[x], {x, a, b}]] == N[Integrate[h[x], {x, a, b}]]
+(*Approximating the Area Under the Curve using Riemann Sum*)
+HoldForm[
+  Limit[Sum[h[a + i*(b - a)/j]*(b - a)/j, {i, 0, j - 1}], 
+   j -> Infinity]] ==           
+ N[Limit[Sum[h[a + i*(b - a)/j]*(b - a)/j, {i, 0, j - 1}], 
+   j -> Infinity]]
+(*Approximating the Area Under the Curve using Riemann Sum (expanded) \
+to prove it's the Fundamental Theorem of Calculus calculated above*)
+HoldForm[Limit[Sum[h[i*x/j]*x/j, {i, 0, j - 1}], j -> Infinity]] == 
+ Expand[Limit[Sum[h[i*x/j]*x/j, {i, 0, j - 1}], j -> Infinity]]
