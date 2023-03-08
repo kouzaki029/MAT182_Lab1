@@ -6,9 +6,18 @@ Limit[(1 - x^3)/(x^x), x -> Infinity]
 
 
 f[x] = D[(x^5), x]
-While[f[x] >= 0;
- {
-  f[x] = D[f[x], x];
-  Print[f[x]]
-  }
- ]
+y = D[f[x], x]
+f[x] = D[y, x]
+(*While[y>=0,
+{
+y=D[y,x];
+Print[y]
+}
+]*)
+(*i=0
+While[i<3, 
+{
+Print[i];
+++i
+}
+]*)
