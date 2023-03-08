@@ -1,0 +1,5 @@
+ClearAll["Global`*"]
+Limit[(Sin[x])/(x - Pi), x -> Pi]
+Limit[(Exp[x] - x - 1)/(x^2), x -> +0]
+Limit[(Sqrt[x])/(Exp[x]), x -> Infinity]
+Limit[(1 - x^3)/(x^x), x -> Infinity]
