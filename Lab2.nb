@@ -1,4 +1,10 @@
-(*Derivative Loop*)
+(*
+Derivative Loop: 
+y = D[(x^5), x]
+Until[y == 0, y = D[y, x];
+  Print[y]];
+*)
+
 
 (*Part A:*)
 Limit[(Sin[x])/(x - Pi), x -> Pi]
