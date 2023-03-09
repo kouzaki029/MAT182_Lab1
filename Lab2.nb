@@ -1,33 +1,49 @@
-ClearAll["Global`*"]
+(*Derivative Loop*)
+
+(*Part A:*)
 Limit[(Sin[x])/(x - Pi), x -> Pi]
 Limit[(Exp[x] - x - 1)/(x^2), x -> +0]
 Limit[(Sqrt[x])/(Exp[x]), x -> Infinity]
 Limit[(1 - x^3)/(x^x), x -> Infinity]
 
+(*Part B:*)
+Limit[((2 Exp[x]^2 x)/(1)), x -> 0]
 
-f[x] = D[(x^5), x]
-y = D[f[x], x]
-f[x] = D[y, x]
-(*While[y>=0,
-{
-y=D[y,x];
-Print[y]
-}
-]*)
-(*i=0
-While[i<3, 
-{
-Print[i];
-++i
-}
-]*)
-i = 0
-While[i != 2, 
- {
-  Print[i];
-  i = 1;
-  Print[i];
-  i = 2;
-  Print[i]
-  }
- ]
+(*Part C:*)
+Limit[((x^2 + 4 x + 7)/(x - 6)), x -> infinity]
+
+(*Part E:*)
+ClearAll["Global`*"]
+a[x_] = Log[x];
+b[x_] = Exp[x];
+c[x_] = x^5;
+d[x_] = x^(3/5);
+e[x_] = x^3;
+f[x_] = Sqrt[x];
+Plot[{a[x], b[x], c[x], d[x], e[x], f[x]}, {x, -5, 60}, 
+ PlotRange -> {-10, 100000000}, 
+ PlotStyle -> {{Red}, {Green, 
+    Dashed}, {Blue}, {Gray}, {Cyan}, {Magenta}}, 
+ PlotLegends -> "Expressions", AxesLabel -> Automatic]
+Plot[{a[x], b[x], c[x], d[x], e[x], f[x]}, {x, -5, 60}, 
+ PlotRange -> {-10, 10000000}, 
+ PlotStyle -> {{Red}, {Green, 
+    Dashed}, {Blue}, {Gray}, {Cyan}, {Magenta}}, 
+ PlotLegends -> "Expressions", AxesLabel -> Automatic]
+Plot[{a[x], b[x], c[x], d[x], e[x], f[x]}, {x, -5, 60}, 
+ PlotRange -> {-10, 10}, 
+ PlotStyle -> {{Red}, {Green, 
+    Dashed}, {Blue}, {Gray}, {Cyan}, {Magenta}}, 
+ PlotLegends -> "Expressions", AxesLabel -> Automatic]
+ClearAll["Global`*"]
+a[x_] = Pi^x;
+b[x_] = 3^x;
+c[x_] = x^(Pi);
+d[x_] = Exp[x];
+e[x_] = x^x;
+f[x_] = x!;
+Plot[{a[x], b[x], c[x], d[x], e[x], f[x]}, {x, -5, 60}, 
+ PlotRange -> {-10, 100000000}, 
+ PlotStyle -> {{Red}, {Green, 
+    Dashed}, {Blue}, {Gray}, {Cyan}, {Magenta}}, 
+ PlotLegends -> "Expressions", AxesLabel -> Automatic]
