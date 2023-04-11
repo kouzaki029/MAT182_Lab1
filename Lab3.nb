@@ -86,3 +86,6 @@ N[Sum[1/i^(3/2), {i, 1, Infinity}]]
 
 (*Integral Test Practice #14: *)
 N[Sum[1/i^(3), {i, 1, Infinity}]]
+
+(*Integral Test Practice #15: *)
+N[Sum[1/i, {i, 1, Infinity}]]
