@@ -25,12 +25,49 @@ Integrate[Log[x]/x^2, {x, 1, Infinity}]
 (*Improper Integrals Example #2: *)
 HoldForm[Integrate[Log[x]/x^2, {x, 1, Infinity}]] == 
  Integrate[Log[x]/x^2, {x, 1, Infinity}]
+ 
+ (*Improper Integral Practice #5: *)
+Integrate[1/x^(1/3), {x, 1, Infinity}]
 
-(*Improper Integral Practice #2: *)
+(*Improper Integral Practice #6: *)
 Integrate[1/x^(3), {x, 1, Infinity}]
 
-(*Improper Integral Practice #3: *)
+(*Improper Integral Practice #7: *)
 Integrate[1/((x + 1) (Log[x + 1])), {x, 1, Infinity}]
+
+(*Improper Integral Practice #8: *)
+Integrate[Log[x]/x, {x, 1, Infinity}]
 
 (*Improper Integral Practice #9: *)
 Integrate[(6 x + 2)/((3 x^(2) + 2 x + 1) (x^2)), {x, 1, Infinity}]
+
+(*Improper Integral and their Connection to Infinite Series Example \
+#1 Part 1: *)
+f[x_] = 1/x
+
+(*Improper Integral and their Connection to Infinite Series Example \
+#1 Part 2:*)
+a = 1;
+b = 8;
+m = 8;
+deltax = (b - a)/m;
+leftsum = Graphics[
+   Table[
+    {EdgeForm[Thin],
+      Red, 
+     Opacity[0.5], 
+     Rectangle[{a + i*deltax, 0}, {a + (i + 1)*deltax, 
+       f[a + i*deltax]}]},
+     {i, 0, m - 1}
+    ]
+   ];
+Show[Plot[f[x], {x, 0, 7},
+  PlotRange -> {0, 1.5},
+  Filling -> None, Ticks -> {{a, b}, Automatic},
+  PlotLabel -> N[Sum[f[a + i*deltax]*deltax, {i, 0, m - 1}]],
+  PlotStyle -> {Blue, Thick}
+  ],
+ leftsum
+ ]
+HoldForm[Integrate[1/x, {x, 1, Infinity}]] == 
+ Integrate[1/x, {x, 1, Infinity}]
