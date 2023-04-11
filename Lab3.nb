@@ -6,3 +6,6 @@ N[Sum[1/2^(i), {i, 10}]]
 
 (*Partial Sum Example #2: *)
 N[Sum[1/2^(i), {i, 100}]]
+
+(*Partial Sum Practice #1: *)
+N[Sum[1/(n^(2) - 1), {n, 2, 100}]]
