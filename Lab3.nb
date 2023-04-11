@@ -80,3 +80,6 @@ N[Sum[1/Sqrt[i], {i, 1, Infinity}]]
 
 (*Integral Test Practice #12: *)
 N[Sum[1/i^(2/5), {i, 1, Infinity}]]
+
+(*Integral Test Practice #13: *)
+N[Sum[1/i^(3/2), {i, 1, Infinity}]]
