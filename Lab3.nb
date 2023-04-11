@@ -21,3 +21,8 @@ N[Sum[((-1)^(n + 1) (4))/(2 n - 1), {n, 1, 100}]]
 
 (*Improper Integrals Example #1: *)
 Integrate[Log[x]/x^2, {x, 1, Infinity}]
+
+(*Improper Integrals Example #2: *)
+HoldForm[Integrate[Log[x]/x^2, {x, 1, Infinity}]] == 
+ Integrate[Log[x]/x^2, {x, 1, Infinity}]
+
