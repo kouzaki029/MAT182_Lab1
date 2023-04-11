@@ -26,3 +26,5 @@ Integrate[Log[x]/x^2, {x, 1, Infinity}]
 HoldForm[Integrate[Log[x]/x^2, {x, 1, Infinity}]] == 
  Integrate[Log[x]/x^2, {x, 1, Infinity}]
 
+(*Improper Integral Practice #2: *)
+Integrate[1/x^(3), {x, 1, Infinity}]
