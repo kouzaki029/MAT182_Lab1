@@ -1,0 +1,2 @@
+(*Lab 3 - Partial Sums and Integral Test*)
+ClearAll["Global`*"]
