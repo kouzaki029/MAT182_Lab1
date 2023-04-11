@@ -28,3 +28,6 @@ HoldForm[Integrate[Log[x]/x^2, {x, 1, Infinity}]] ==
 
 (*Improper Integral Practice #2: *)
 Integrate[1/x^(3), {x, 1, Infinity}]
+
+(*Improper Integral Practice #3: *)
+Integrate[1/((x + 1) (Log[x + 1])), {x, 1, Infinity}]
