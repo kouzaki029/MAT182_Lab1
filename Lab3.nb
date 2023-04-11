@@ -71,3 +71,12 @@ Show[Plot[f[x], {x, 0, 7},
  ]
 HoldForm[Integrate[1/x, {x, 1, Infinity}]] == 
  Integrate[1/x, {x, 1, Infinity}]
+
+(*Integral Test Practice #10: *)
+N[Sum[1/i^2, {i, 1, Infinity}]]
+
+(*Integral Test Practice #11: *)
+N[Sum[1/Sqrt[i], {i, 1, Infinity}]]
+
+(*Integral Test Practice #12: *)
+N[Sum[1/i^(2/5), {i, 1, Infinity}]]
