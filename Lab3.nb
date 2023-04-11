@@ -1,2 +1,8 @@
 (*Lab 3 - Partial Sums and Integral Test*)
 ClearAll["Global`*"]
+
+(*Partial Sum Examplem #1: *)
+N[Sum[1/2^(i), {i, 10}]]
+
+(*Partial Sum Example #2: *)
+N[Sum[1/2^(i), {i, 100}]]
