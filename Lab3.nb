@@ -9,3 +9,9 @@ N[Sum[1/2^(i), {i, 100}]]
 
 (*Partial Sum Practice #1: *)
 N[Sum[1/(n^(2) - 1), {n, 2, 100}]]
+
+(*Partial Sum Practice #2: *)
+N[Sum[(2/3)^(n), {n, 0, 100}]]
+
+(*Partial Sum Practice #3: *)
+N[Sum[1/(n - 1)!, {n, 1, 100}]]
